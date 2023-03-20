@@ -1,0 +1,14 @@
+#We must first import the Pandas library. We will shortcut it to "pd".
+import pandas as pd
+
+#This imports the necessary libraries
+import os
+from os.path import curdir
+
+#To import CSV files
+csv_path = os.path.join(curdir,'Data','MMA_860_Grocery_Data.csv')
+df = pd.read_csv(csv_path, header='infer', index_col='Obs')
+
+#To import Excel files
+xl_path = os.path.join(curdir,'Data',"MMA_860_Grocery_Data.xlsx")
+df_xl = pd.read_excel(xl_path,sheet_name=0,header='infer',index_col="Obs")
